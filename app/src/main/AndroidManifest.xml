@@ -10,17 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:name=".PixelBarMark2">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_search_bar_mark_2"/>
-        </receiver>
-
-        <receiver android:name=".PixelBarMark1">
+        <receiver
+            android:name=".PixelBarMark1"
+            android:label="@string/search_bar_mark_1">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -28,6 +20,18 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_search_bar_mark_1"/>
+        </receiver>
+
+        <receiver
+            android:name=".PixelBarMark2"
+            android:label="@string/search_bar_mark_2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_search_bar_mark_2"/>
         </receiver>
     </application>
 

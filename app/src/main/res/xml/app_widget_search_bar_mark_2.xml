@@ -5,7 +5,7 @@
     android:initialLayout="@layout/search_bar_mark_2"
     android:minHeight="40dp"
     android:minWidth="180dp"
-    android:previewImage="@drawable/preview_dark_mark_2"
+    android:previewImage="@drawable/preview_search_bar_mark_2"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="86400000"
     android:widgetCategory="home_screen">

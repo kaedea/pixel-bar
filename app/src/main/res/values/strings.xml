@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PixelBar</string>
-    <string name="appwidget_left">Left</string>
-    <string name="appwidget_right">Right</string>
+    <string name="search_bar_mark_1">Mark 1</string>
+    <string name="search_bar_mark_2">Mark 2</string>
     <string name="add_widget">Add widget</string>
 </resources>
