@@ -1,7 +1,5 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -25,6 +23,14 @@ android {
             "$it" {
                 java.srcDirs += file("src/$it/kotlin")
             }
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("doc/keystore_001")
+            storePassword System.getenv("KEYSTORE_PASS")
+            keyAlias System.getenv("ALIAS_NAME")
+            keyPassword System.getenv("ALIAS_PASS")
         }
     }
 }
