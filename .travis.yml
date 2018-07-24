@@ -39,6 +39,6 @@ deploy:
   on:
     tags: true
 
-branches:
-  only:
-   - master
+# branches:
+#   only:
+#    - master
