@@ -18,14 +18,15 @@ git:
   submodules: false
 
 before_install:
-- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-- git submodule init && git submodule update
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule init && git submodule update
 
 script:
   - ./gradlew assembleRelease
 
 before_deploy:
-  - mv app/build/outputs/apk/app-release.apk app/build/outputs/apk/pixelbar-app-${TRAVIS_TAG}.apk
+  - mv app/build/outputs/apk/release/app-release.apk app/build/outputs/apk/pixelbar-app-${TRAVIS_TAG}.apk
+  - mv app/build/outputs/mapping/release/mapping.txt app/build/outputs/apk/pixelbar-mapping-${TRAVIS_TAG}.txt
 
 deploy:
   provider: releases
@@ -33,7 +34,7 @@ deploy:
     secure: ${GH_TOKEN}
   file:
     - app/build/outputs/apk/pixelbar-app-${TRAVIS_TAG}.apk
-    # - app/build/outputs/apk/pixelbar-mapping-${TRAVIS_TAG}.txt
+    - app/build/outputs/apk/pixelbar-mapping-${TRAVIS_TAG}.txt
   skip_cleanup: true
   on:
     tags: true

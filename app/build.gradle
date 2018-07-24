@@ -14,12 +14,6 @@ android {
         versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
     sourceSets {
         ['main', 'test', 'androidTest'].each {
             "$it" {
@@ -29,10 +23,17 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(System.getenv("KEYSTORE_FILE"))
+            storeFile rootProject.file(System.getenv("KEYSTORE_FILE"))
             storePassword System.getenv("KEYSTORE_PASSWORD")
             keyAlias System.getenv("ALIAS_NAME")
             keyPassword System.getenv("ALIAS_PASSWORD")
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
