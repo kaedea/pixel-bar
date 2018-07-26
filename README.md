@@ -8,7 +8,7 @@ A pixel search bar like widget.
 
 ## Download
 
-Check [releases](/releases).
+Check [releases](https://github.com/kaedea/pixel-bar/releases).
 
 ## License
 
