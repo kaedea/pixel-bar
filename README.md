@@ -14,6 +14,10 @@ Check [releases](https://github.com/kaedea/pixel-bar/releases).
 
 <img src="doc/screenshot.jpg" width="400px"/>
 
+## Contributing
+
+Check [CONTRIBUTING.md](/CONTRIBUTING.md).
+
 ## License
 
 The project is [Apache License, Version 2.0](/LICENSE) licensed.
